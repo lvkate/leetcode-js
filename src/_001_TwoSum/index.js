@@ -22,19 +22,67 @@
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
+ * Time : O(N2) ; Space : O(1)
+ * Brute force method
+ * Loop through each element x and find if there is another value that
+ * equals to target - x
+ */
+// var twoSum = function (nums, target) {
+//     for (i = 0; i < nums.length; i++) {
+//         for (j = i+1; j < nums.length; j++) {
+//             if (nums[i] + nums[j] === target) {
+//                 return [i,j];
+//             }
+//         }
+//     }
+//     throw "No two sum solution";
+// };
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ * Time : O(N) ; Space: O(N)
+ * Two-pass Hash Table
+ * A simple implementation uses two iterations. In the first iteration,
+ * we add each element's value and its index to the table. Then, 
+ * in the second iteration we check if each element's complement
+ * (target - nums[i]) exists in the table. Beware that 
+ * the complement must not be nums[i] itself!
+ */
+// var twoSum = function (nums, target) {
+//     var myMap = new Map();
+//     for (i = 0; i < nums.length; i++) {
+//         myMap.set(nums[i],i);
+//     }
+//     for (i = 0; i < nums.length; i++) {
+//         let complement = target - nums[i];
+//         if (myMap.has(complement) && myMap.get(complement) != i) {
+//             return [i,myMap.get(complement)];
+//         }
+//     }
+//     throw "No two sum solution";
+// }
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ * Time : O(N) ; Space: O(N)
+ * One-pass Hash Table
+ * While we iterate and inserting elements into the table, we also 
+ * look back to check if current element's complement already exists 
+ * in the table. If it exists, we have found a solution and return immediately.
  */
 var twoSum = function (nums, target) {
-    var sums = [0, 0];
+    var myMap = new Map();
     for (i = 0; i < nums.length; i++) {
-        for (j = i+1; j < nums.length; j++) {
-            if (nums[i] + nums[j] === target) {
-                sums[0] = i;
-                sums[1] = j;
-                return sums;
-            }
+        let complement = target - nums[i];
+        if (myMap.has(complement)) {
+            return [myMap.get(complement), i];
         }
+        myMap.set(nums[i], i);
     }
-    return sums;
-};
-
+    throw "No two sum solution";
+}
 module.exports = twoSum;
