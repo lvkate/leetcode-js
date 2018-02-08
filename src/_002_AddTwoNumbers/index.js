@@ -1,6 +1,6 @@
 /**
  * Time : O(m+n) ; Space: O(m+n)
- * @tag : Linked List;
+ * @tag : Linked List
  * @by  : Jason Hu
  * @date: Feb 7, 2018
  ***************************************************************************
