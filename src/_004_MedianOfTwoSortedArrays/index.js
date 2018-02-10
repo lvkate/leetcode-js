@@ -42,8 +42,28 @@
  * @param {number[]} nums1
  * @param {number[]} nums2
  * @return {number}
+ * we name the first and last element of num1 is a and b, m and n for num2
+ * so a <= b, m <= n
+ * there will be several relationships between num1 and num2
+ * 1. b <= m same as n <= a if we change the order of them
+ * 2. a <= m and b >= m
+ * 3. a <= m and b >= n
+ *
+ * we can find the median of one sorted array by get element at the median
+ * index of an odd array. And the sum of an even array's median 2 elements
+ * divide by 2. The complexity is O(1)
+ * so 1. 
  */
 var findMedianSortedArrays = function(nums1, nums2) {
+	
     
+};
+var findMedianOfSortedArray = function(num) {
+	const l = num.length;
+	if (l % 2 === 0) {
+		return (num[l/2 - 1] + num[l/2]) / 2;
+	} else {
+		return num[(l-1)/2];
+	}
 };
 module.exports = findMedianSortedArrays;
