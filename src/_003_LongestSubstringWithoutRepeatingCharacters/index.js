@@ -30,23 +30,23 @@
  * If we do this for all i, we get our answer.
  */
 var lengthOfLongestSubstring = function (s) {
-    var max = 0;
-    for (i = 0; i < s.length; i++) {
-        var set = new Set();
-        var j = i;
-        while (j < s.length && !set.has(s[j])) {
-            set.add(s[j]);
-            j++;
-        }
-        //max = max < j - i ? j - i : max;
-        if (max < j - i) {
-            max = j - i;
-            // console.log(set);
-            // console.log('i=' + i);
-            // console.log('j=' + j);
-        }
+  var max = 0;
+  for (i = 0; i < s.length; i++) {
+    var set = new Set();
+    var j = i;
+    while (j < s.length && !set.has(s[j])) {
+      set.add(s[j]);
+      j++;
     }
-    return max;
+    //max = max < j - i ? j - i : max;
+    if (max < j - i) {
+      max = j - i;
+      // console.log(set);
+      // console.log('i=' + i);
+      // console.log('j=' + j);
+    }
+  }
+  return max;
 };
 
 module.exports = lengthOfLongestSubstring;

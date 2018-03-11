@@ -75,14 +75,14 @@
  * in the table. If it exists, we have found a solution and return immediately.
  */
 var twoSum = function (nums, target) {
-    var myMap = new Map();
-    for (i = 0; i < nums.length; i++) {
-        let complement = target - nums[i];
-        if (myMap.has(complement)) {
-            return [myMap.get(complement), i];
-        }
-        myMap.set(nums[i], i);
+  var myMap = new Map();
+  for (i = 0; i < nums.length; i++) {
+    let complement = target - nums[i];
+    if (myMap.has(complement)) {
+      return [myMap.get(complement), i];
     }
-    throw "No two sum solution";
+    myMap.set(nums[i], i);
+  }
+  throw "No two sum solution";
 }
 module.exports = twoSum;

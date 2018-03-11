@@ -79,30 +79,30 @@ const listNodeToInt = L.listNodeToInt;
 // };
 
 var addTwoNumbers = function (l1, l2) {
-    var head = new ListNode(0);
-    var cur = head;
-    var carry = 0;
-    var sum = 0;
-    while (l1 !== null || l2 !== null || sum === 1) {
-        if (l1 !== null) {
-            sum += l1.val;
-            l1 = l1.next;
-        }
-        if (l2 !== null) {
-            sum += l2.val;
-            l2 = l2.next;
-        }
-        if (sum >= 10) {
-            carry = 1;
-            sum = sum - 10;
-        }
-        cur.next = new ListNode(sum);
-        cur = cur.next;
-        sum = carry;
-        carry = 0;
+  var head = new ListNode(0);
+  var cur = head;
+  var carry = 0;
+  var sum = 0;
+  while (l1 !== null || l2 !== null || sum === 1) {
+    if (l1 !== null) {
+      sum += l1.val;
+      l1 = l1.next;
     }
+    if (l2 !== null) {
+      sum += l2.val;
+      l2 = l2.next;
+    }
+    if (sum >= 10) {
+      carry = 1;
+      sum = sum - 10;
+    }
+    cur.next = new ListNode(sum);
+    cur = cur.next;
+    sum = carry;
+    carry = 0;
+  }
 
-    return head.next;
+  return head.next;
 };
 
 // addTwoNumbers(l1,l2);

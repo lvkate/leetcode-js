@@ -54,16 +54,29 @@
  * divide by 2. The complexity is O(1)
  * so 1. 
  */
-var findMedianSortedArrays = function(nums1, nums2) {
-	
-    
-};
-var findMedianOfSortedArray = function(num) {
-	const l = num.length;
-	if (l % 2 === 0) {
-		return (num[l/2 - 1] + num[l/2]) / 2;
-	} else {
-		return num[(l-1)/2];
-	}
+var findMedianSortedArrays = function (nums1, nums2) {
+  let maxlength = nums1.length + nums2.length;
+  let nums3 = [];
+  let n1 = 0;
+  let n2 = 0;
+  let flag1 = false;
+  let flag2 = false;
+  while ((nums1[n1] || nums2[n2]) && nums3.length <= maxlength / 2) {
+    flag1 = nums1[n1] === undefined
+    flag2 = nums2[n2] === undefined
+    if (flag2 || nums1[n1] < nums2[n2]) {
+      nums3.push(nums1[n1]);
+      n1++;
+    } else if (flag1 || nums2[n2] < nums1[n1]) {
+      nums3.push(nums2[n2]);
+      n2++;
+    } else {
+      nums3.push(nums1[n1], nums2[n2])
+      n1++;
+      n2++;
+    }
+  }
+  console.log(nums3);
+  return maxlength % 2 === 1 ? nums3[(maxlength + 1) / 2 - 1] : (nums3[maxlength / 2 - 1] + nums3[(maxlength / 2)]) / 2
 };
 module.exports = findMedianSortedArrays;
