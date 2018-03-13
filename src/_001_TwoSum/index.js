@@ -74,8 +74,8 @@
  * look back to check if current element's complement already exists 
  * in the table. If it exists, we have found a solution and return immediately.
  */
-var twoSum = function (nums, target) {
-  var myMap = new Map();
+const twoSum = (nums, target) => {
+  const myMap = new Map();
   for (i = 0; i < nums.length; i++) {
     let complement = target - nums[i];
     if (myMap.has(complement)) {
@@ -84,5 +84,5 @@ var twoSum = function (nums, target) {
     myMap.set(nums[i], i);
   }
   throw "No two sum solution";
-}
+};
 module.exports = twoSum;
