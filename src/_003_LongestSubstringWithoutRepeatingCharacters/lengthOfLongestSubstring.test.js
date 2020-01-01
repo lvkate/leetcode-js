@@ -1,4 +1,4 @@
-const lengthOfLongestSubstring = require('./index');
+const lengthOfLongestSubstring = require('./lengthOfLongestSubstring');
 
 test('lengthOfLongestSubstring function exists', () => {
   expect(lengthOfLongestSubstring).toBeDefined();

@@ -1,4 +1,4 @@
-const convert = require('./index');
+const convert = require('./convert');
 
 test('ZigZagConversion function exists', () => {
   expect(convert).toBeDefined();

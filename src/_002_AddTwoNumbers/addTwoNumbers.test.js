@@ -1,4 +1,4 @@
-const addTwoNumbers = require('./index');
+const addTwoNumbers = require('./addTwoNumbers');
 const L = require('./listNode');
 const ListNode = L.ListNode;
 const intToListNode = L.intToListNode;

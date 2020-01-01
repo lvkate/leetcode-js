@@ -1,4 +1,4 @@
-const twoSum = require('./index');
+const twoSum = require('./twoSum');
 
 test('twoSum function exists', () => {
   expect(twoSum).toBeDefined();

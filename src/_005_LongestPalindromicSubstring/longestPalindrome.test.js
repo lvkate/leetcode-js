@@ -1,4 +1,4 @@
-const longestPalindrome = require('./index');
+const longestPalindrome = require('./longestPalindrome');
 
 test('longestPalindrome function exists', () => {
   expect(longestPalindrome).toBeDefined();

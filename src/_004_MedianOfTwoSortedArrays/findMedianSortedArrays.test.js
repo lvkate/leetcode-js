@@ -1,4 +1,4 @@
-const findMedianSortedArrays = require('./index');
+const findMedianSortedArrays = require('./findMedianSortedArrays');
 
 test('findMedianSortedArrays function exists', () => {
   expect(findMedianSortedArrays).toBeDefined();
