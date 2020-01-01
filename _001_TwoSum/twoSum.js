@@ -22,7 +22,7 @@
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
- * Time : O(N2) ; Space : O(1)
+ * Time : O(N^2) ; Space : O(1)
  * Brute force method
  * Loop through each element x and find if there is another value that
  * equals to target - x
@@ -74,7 +74,7 @@
  * look back to check if current element's complement already exists 
  * in the table. If it exists, we have found a solution and return immediately.
  */
-const twoSum = (nums, target) => {
+var twoSum = function(nums, target) {
   const myMap = new Map();
   for (i = 0; i < nums.length; i++) {
     let complement = target - nums[i];
