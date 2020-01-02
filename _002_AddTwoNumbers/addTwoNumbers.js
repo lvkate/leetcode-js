@@ -5,12 +5,12 @@
  * @date: Feb 7, 2018
  ***************************************************************************
  * Description:
- * You are given two non-empty linked lists representing two non-negative integers. 
- * The digits are stored in reverse order and each of their nodes contain a single digit. 
+ * You are given two non-empty linked lists representing two non-negative integers.
+ * The digits are stored in reverse order and each of their nodes contain a single digit.
  * Add the two numbers and return it as a linked list.
- * 
+ *
  * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
- * 
+ *
  * Example
  * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
  * Output: 7 -> 0 -> 8
@@ -26,7 +26,7 @@
  *     this.next = null;
  * }
  */
-const L = require('./listNode');
+const L = require("./listNode");
 const ListNode = L.ListNode;
 const intToListNode = L.intToListNode;
 const listNodeToInt = L.listNodeToInt;
@@ -42,10 +42,10 @@ const listNodeToInt = L.listNodeToInt;
  * Set y to node q's value. If q has reached the end of l2, set to 0.
  * Set sum = x + y + carry.
  * Update carry = sum / 10.
- * Create a new node with the digit value of (sum mod 10) and set it 
+ * Create a new node with the digit value of (sum mod 10) and set it
  * to current node's next, then advance current node to next.
  * Advance both p and q.
- * Check if carry = 1, if so append a new node with digit 1 
+ * Check if carry = 1, if so append a new node with digit 1
  * to the returning list.
  * Return dummy head's next node.
  **/
@@ -78,7 +78,7 @@ const listNodeToInt = L.listNodeToInt;
 //     return head.next;
 // };
 
-var addTwoNumbers = function (l1, l2) {
+var addTwoNumbers = function(l1, l2) {
   var head = new ListNode(0);
   var cur = head;
   var carry = 0;
